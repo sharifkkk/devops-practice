@@ -6,7 +6,7 @@ pipeline {
         input(message: "hello world!", ok: 'Submit')
         sh '''
         hostname
-        cat / etc / redhat - release 
+        cat /etc/redhat - release 
              '''
       }
     }
