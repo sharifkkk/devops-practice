@@ -1,21 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('example') {
       steps {
-        sh 'echo "building !.."'
-      }
-    }
-    stage('test') {
-      steps {
-        sh '''echo "testing !..."
-       bash ${WORKSPACE}/git/readme.md
-          '''
-      }
-    }
-    stage('deploy') {
-      steps {
-        sh 'echo "deploying ! .."'
+        echo "running ${BUILD_ID} ON ${JENKINS_URL}"
       }
     }
   }
