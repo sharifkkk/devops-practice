@@ -4,11 +4,10 @@ pipeline {
     stage('input') {
       steps {
         input(message: "hello world!", ok: 'Submit')
-        sh ''
-        '
+        sh '''
         hostname
-        cat / etc / redhat - release ''
-        '
+        cat / etc / redhat - release 
+             '''
       }
     }
   }
