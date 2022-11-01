@@ -1,15 +1,15 @@
 pipeline {
-agent any
-stages {
-stage('input') {
-steps {
-input(message: "hello world !", ok: 'Submit')
-      sh '''
-           hostname
-          cat /etc/redhat-release
-           '''
+  agent any
+  stages {
+    stage('input') {
+      steps {
+        input(message: "hello world!", ok: 'Submit')
+        sh ''
+        '
+        hostname
+        cat / etc / redhat - release ''
+        '
+      }
+    }
+  }
 }
-}
-}
-}
-
