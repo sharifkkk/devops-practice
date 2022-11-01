@@ -8,7 +8,8 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'echo "testing !.."'
+        sh 'echo "testing !.."
+       bash ${WORKSPACE}/git/readme.md
       }
     }
     stage('deploy') {
