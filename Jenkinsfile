@@ -2,8 +2,25 @@ pipeline {
   agent any
   stages {
     stage('build_app') {
-      steps {
-        echo "${params.Greeting} world !"
+      parallel {
+        stage('build_app') {
+          steps {
+            echo "${params.Greeting} world !"
+          }
+        }
+
+        stage('builld 1.1') {
+          steps {
+            sh 'sleep 5 && echo "parallel step 1.1"'
+          }
+        }
+
+        stage('build 1.2') {
+          steps {
+            sh 'sleep 5 && echo "parallel step 1.2"'
+          }
+        }
+
       }
     }
 
