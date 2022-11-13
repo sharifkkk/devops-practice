@@ -13,6 +13,12 @@ pipeline {
       }
     }
 
+    stage('deploy_app') {
+      steps {
+        sh 'echo "deploy code in host :`hostname`"'
+      }
+    }
+
   }
   parameters {
     string(name: 'Greeting', defaultValue: 'sharif', description: 'how should i greet the world?')
